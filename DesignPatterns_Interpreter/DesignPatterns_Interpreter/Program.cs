@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
+
 namespace DesignPatterns_Interpreter
 {
     class Program
@@ -19,6 +20,8 @@ namespace DesignPatterns_Interpreter
             context.SetVariable("x", x);
             context.SetVariable("y", y);
             context.SetVariable("z", z);
+
+            Console.WriteLine($"x = {x}, y = {y}, z = {z}");
 
             Context.IExpression expression = new Context.SubtractExpression(
                 new Context.AddExpression(new Context.NumberExpression("x"), new Context.NumberExpression("y")), new Context.NumberExpression("z"));
